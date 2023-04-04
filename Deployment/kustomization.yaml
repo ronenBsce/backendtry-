@@ -5,7 +5,6 @@ resources:
 - backend/1
 - backend/2
 - frontend
-- namespace.yaml
 
 configMapGenerator:
 - name: app-environment
