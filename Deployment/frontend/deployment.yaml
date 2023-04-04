@@ -9,7 +9,7 @@ metadata:
     app.kubernetes.io/name: frontend
     app.kubernetes.io/part-of: api-workshop
     app.openshift.io/runtime: nginx 
-    app.openshift.io/runtime-namespace: api-workshop
+    app.openshift.io/runtime-namespace: user3-application
 spec:
   replicas: 1
   selector:
