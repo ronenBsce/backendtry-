@@ -21,6 +21,11 @@ spec:
         app: frontend
         deployment: frontend
     spec:
+      volumes:
+      - name: app-config
+        configMap:
+          name: app-config
+          defaultMode: 509  #This change the premissions for the mounted files
       containers:
       - resources:
           requests:
@@ -38,6 +43,9 @@ spec:
           failureThreshold: 3
         terminationMessagePath: /dev/termination-log
         name: frontend
+        volumeMounts:
+          - name: app-config
+            mountPath: '/usr/share/nginx/html/config' #the location where the files will be mounted
         livenessProbe:
           httpGet:
             path: /probes/liveness
@@ -65,6 +73,7 @@ spec:
       dnsPolicy: ClusterFirst
       securityContext: {}
       schedulerName: default-scheduler
+      
   strategy:
     type: RollingUpdate
     rollingUpdate:
