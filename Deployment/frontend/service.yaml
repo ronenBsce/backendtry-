@@ -1,12 +1,12 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: fronetend
+  name: frontend
   labels:
-    app: fronetend
-    app.kubernetes.io/component: fronetend
-    app.kubernetes.io/instance: fronetend
-    app.kubernetes.io/name: fronetend
+    app: frontend
+    app.kubernetes.io/component: frontend
+    app.kubernetes.io/instance: frontend
+    app.kubernetes.io/name: frontend
     app.kubernetes.io/part-of: api-workshop
     app.openshift.io/runtime-version: v1
 spec:
@@ -21,5 +21,5 @@ spec:
       targetPort: 8443
   type: ClusterIP
   selector:
-    app: fronetend
-    deployment: fronetend
+    app: frontend
+    deployment: frontend
