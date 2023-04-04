@@ -1,18 +1,18 @@
 kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
-  name: fronetend
+  name: frontend
   labels:
-    app: fronetend
-    app.kubernetes.io/component: fronetend
-    app.kubernetes.io/instance: fronetend
-    app.kubernetes.io/name: fronetend
+    app: frontend
+    app.kubernetes.io/component: frontend
+    app.kubernetes.io/instance: frontend
+    app.kubernetes.io/name: frontend
     app.kubernetes.io/part-of: api-workshop
     app.openshift.io/runtime-version: v1
 spec:
   to:
     kind: Service
-    name: fronetend
+    name: frontend
     weight: 100
   port:
     targetPort: 8080-tcp
